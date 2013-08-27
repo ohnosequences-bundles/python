@@ -10,7 +10,7 @@ case object Python extends Bundle() {
   def install[D <: DistributionAux](distribution: D): InstallResults = {
     val result = Seq("yum", "install", "python", "-y").!
     if (result == 0) success(metadata+" is installed")
-    else failure("Couldn't install git")
+    else failure("Couldn't install "+metadata)
   }
 
 }
